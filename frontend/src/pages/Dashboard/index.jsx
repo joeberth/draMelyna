@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from 'react';
+import api from '../../services/api'
 import Patients from './patients'
 
 
-const Doctor = ( ) => {
 
+const Doctor = ( ) => {
+  console.log("TENTOU CHEGAR AQUI")
   // eslint-disable-next-line
   const empty =  {name: '', email: ''}
   const [patientTest, setPatient] = useState(empty)
   const [patients, setPatients] = useState([{name: 'joao', email: 'adsd@a.com'}, {name: 'maria', email: 'adsasdd@a.com'}]);
-  console.log(patientTest)
   const handleAddPatient =  () => {
     setPatients(patients.concat(patientTest))
     setPatient(empty)
