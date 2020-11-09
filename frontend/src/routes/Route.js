@@ -17,12 +17,10 @@ export default function RouteWrapper({
     console.log(store.getState().auth)
     
     if (!signed && isPrivate ) {
-        console.log("entrou aqui")
         return <Redirect to="/" />
     }
 
     if (signed && !isPrivate ) {
-        console.log("REDIRECIONOU")
         return <Redirect to="/dashboard" />
     }
     console.log(store.getState())

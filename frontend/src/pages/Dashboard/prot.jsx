@@ -2,10 +2,10 @@ import React, { useState, useEffect } from 'react';
 import api from '../../services/api'
 import Patients from './patients'
 
+import { Container } from './style'
 
 
 const Doctor = ( ) => {
-  console.log("TENTOU CHEGAR AQUI")
   // eslint-disable-next-line
   const empty =  {name: '', email: ''}
   const [patientTest, setPatient] = useState(empty)
