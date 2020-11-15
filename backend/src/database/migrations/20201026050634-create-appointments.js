@@ -1,8 +1,6 @@
-'use strict';
-
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    return queryInterface.createTable('appointments', { 
+    return queryInterface.createTable('appointments', {
       id: {
         type: Sequelize.INTEGER,
         allowNull: false,
@@ -22,7 +20,7 @@ module.exports = {
       },
       provider_id: {
         type: Sequelize.INTEGER,
-        references: { model: 'users', key: 'id'},
+        references: { model: 'users', key: 'id' },
         onUpdate: 'CASCADE',
         onDelete: 'SET NULL',
         allowNull: true,
@@ -39,10 +37,9 @@ module.exports = {
         allowNull: false,
       },
     });
-    
   },
 
   down: async (queryInterface, Sequelize) => {
-      return queryInterface.dropTable('appointments')
-  }
+    return queryInterface.dropTable('appointments');
+  },
 };
