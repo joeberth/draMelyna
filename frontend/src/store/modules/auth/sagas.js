@@ -49,6 +49,26 @@ export function* signUp( { payload } ) {
     }
 }
 
+export function* signUpPatient( { payload } ) {
+    try {
+        const { name, email, password} = payload;
+        yield call(api.post, 'users', {
+            name,
+            email,
+            password,
+            provider: false,
+        });
+        history.push('/patients');
+        window.location.reload()
+    } catch (err) {
+        toast.error('Falha no cadastro do paciente, verifique os dados!');
+        yield put(signFailure());
+    }
+}
+
+
+
+
 export function setToken({ payload }) {
     if (!payload) return;
 
@@ -68,6 +88,7 @@ export default all([
     takeLatest('persist/REHYDRATE', setToken),
     takeLatest('@auth/SIGN_IN_REQUEST', signIn),
     takeLatest('@auth/SIGN_UP_REQUEST', signUp),
+    takeLatest('@auth/SIGN_UP_PATIENT', signUpPatient),
     takeLatest('@auth/SIGN_OUT', signOut),
 ]);
 

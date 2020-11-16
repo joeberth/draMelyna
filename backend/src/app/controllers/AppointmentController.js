@@ -55,7 +55,9 @@ class AppointmentController {
       date: hourStart,
     });
 
-    return res.json(appointment);
+    return res.json({
+      appointment,
+    });
   }
 
   async index(req, res) {
@@ -64,7 +66,9 @@ class AppointmentController {
       order: ['date'],
     });
 
-    return res.json(appointments);
+    return res.json({
+      appointments,
+    });
   }
 
   async delete(req, res) {

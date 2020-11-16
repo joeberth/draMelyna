@@ -19,6 +19,14 @@ export function signUpRequest(name, email, password) {
     };
 }
 
+export function signUpPatient(name, email) {
+    return {
+        type: '@auth/SIGN_UP_PATIENT',
+        payload: { name, email, password: "111111" },
+    };
+}
+
+
 export function signFailure() {
     return {
         type: '@auth/SIGN_FAILURE',

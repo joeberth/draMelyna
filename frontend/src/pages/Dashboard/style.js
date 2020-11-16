@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  max-width: 600px;
+  max-width: 800px;
   margin: 50px auto;
   display: flex;
   flex-direction: column;
@@ -44,3 +44,4 @@ export const Time = styled.li`
     color: ${props => (props.available ? '#999' : '#666')};
   }
 `;
+

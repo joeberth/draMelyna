@@ -68,6 +68,46 @@ class UserController {
       provider,
     });
   }
+
+  async getById(req, res) {
+    const { id } = req.query;
+    const { name, email, provider } = await User.findByPk(id);
+
+    if (!name) {
+      return res.status(401).json({ error: 'User not exists' });
+    }
+    return res.json({
+      id,
+      name,
+      email,
+      provider,
+    });
+  }
+
+  async deleteById(req, res) {
+    const { id } = req.body;
+
+    if (!id) {
+      return res.status(401).json({ error: 'User not exists' });
+    }
+    try {
+      await User.destroy({ where: { id } });
+    } catch (err) {
+      return res.status(401).json({ error: 'Cannot Delete' });
+    }
+    return res.json({
+      id,
+    });
+  }
+
+  async getPatients(req, res) {
+    const patients = await User.findAll({
+      where: { provider: false },
+    });
+    return res.json({
+      patients,
+    });
+  }
 }
 
 export default new UserController();

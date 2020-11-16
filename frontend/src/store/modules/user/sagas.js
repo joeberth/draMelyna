@@ -1,6 +1,6 @@
 import { takeLatest, call, put, all } from 'redux-saga/effects';
 import { toast } from 'react-toastify';
-
+import history from '../../../services/history';
 import api from '../../../services/api';
 
 import { updateProfileSuccess, updateProfileFailure } from './actions';
@@ -25,4 +25,25 @@ export function* updateProfile({ payload }) {
   }
 }
 
-export default all([takeLatest('@user/UPDATE_PROFILE_REQUEST', updateProfile)]);
+
+export function* deleteProfile({ payload }) {
+  try {
+    const { id } = payload.id;
+
+    yield call(api.delete, 'users', id);
+
+    toast.success('Perfil deletado com sucesso!');
+    history.push('/patients');
+    window.location.reload()
+
+  } catch (err) {
+    toast.error('Erro ao atualizar perfil, confira seus dados!');
+    yield put(updateProfileFailure());
+  }
+}
+
+
+export default all([
+  takeLatest('@user/UPDATE_PROFILE_REQUEST', updateProfile),
+  takeLatest('@user/DELETE_PATIENT_REQUEST', deleteProfile),
+]);

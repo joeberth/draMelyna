@@ -15,7 +15,7 @@ class ScheduleController {
     const { date } = req.query;
     const parsedDate = parseISO(date);
 
-    const appointments = await Appointment.findAll({
+    const appNoPatient = await Appointment.findAll({
       where: {
         provider_id: req.userId,
         canceled_at: null,
@@ -25,6 +25,22 @@ class ScheduleController {
       },
       order: ['date'],
     });
+
+    const appointments = [];
+    const promises = appNoPatient.map(async (a) =>
+      appointments.push({
+        past: a.past,
+        id: a.id,
+        date: a.date,
+        canceled_at: a.canceled_at,
+        createdAt: a.createdAt,
+        updatedAt: a.updatedAt,
+        user_id: a.user_id,
+        provider_id: a.provider_id,
+        patient: (await User.findByPk(a.user_id)).name,
+      })
+    );
+    await Promise.all(promises);
 
     return res.json(appointments);
   }

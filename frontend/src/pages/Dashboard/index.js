@@ -1,4 +1,7 @@
 import React, { useState, useMemo, useEffect } from 'react';
+import { useSelector } from 'react-redux'
+import DatePicker from 'react-datepicker';
+import "react-datepicker/dist/react-datepicker.css";
 import {
   format,
   subDays,
@@ -17,12 +20,12 @@ import api from '../../services/api';
 
 import { Container, Time } from './style';
 
-const range = [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
-
 export default function Dashboard() {
   const [schedule, setSchedule] = useState([]);
   const [date, setDate] = useState(new Date());
-
+  const profile = useSelector(state => state.user.profile);
+  const token = useSelector(state => state.auth.token);
+  
   const dateFormatted = useMemo(
     () => format(date, "d 'de' MMMM", { locale: pt }),
     [date]
@@ -30,21 +33,26 @@ export default function Dashboard() {
 
   useEffect(() => {
     async function loadSchedule() {
-      const response = await api.get('schedule', {
-        params: { date },
+      const availableTime = await api.get(`providers/${profile.id}/available`, {
+        params: { date: date.getTime() },
+        headers: { Authorization: `Bearer ${token}`} 
       });
-
+      const res = await api.get(`schedule`, {
+        params: { date: format(date, "yyyy-MM-dd'T'HH:mm:ssxxx") },
+        headers: { Authorization: `Bearer ${token}`} 
+      });
       const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-
-      const data = range.map(hour => {
-        const checkDate = setSeconds(setMinutes(setHours(date, hour), 0), 0);
+      const data = availableTime.data.map(hour => {
+        const [hourAva, _] =  hour.time.split(':')
+        
+        const checkDate = setSeconds(setMinutes(setHours(date, Number(hourAva)), 0), 0);
         const compareDate = utcToZonedTime(checkDate, timezone);
 
         return {
-          time: `${hour}:00h`,
+          time: `${hour.time}h`,
           past: isBefore(compareDate, new Date()),
-          appointment: response.data.find(a =>
-            isEqual(parseISO(a.date), compareDate)
+          appointment: res.data.find(a =>
+            isEqual(parseISO(a.date).getHours(), compareDate.getHours())
           ),
         };
       });
@@ -65,6 +73,7 @@ export default function Dashboard() {
 
   return (
     <Container>
+     
       <header>
         <button type="button" onClick={handlePrevDay}>
           <MdChevronLeft size={36} color="#FFF" />
@@ -80,7 +89,7 @@ export default function Dashboard() {
           <Time key={time.time} past={time.past} available={!time.appointment}>
             <strong>{time.time}</strong>
             <span>
-              {time.appointment ? time.appointment.user.name : 'Em aberto'}
+              {time.appointment ? time.appointment.patient : 'Em aberto'}
             </span>
           </Time>
         ))}

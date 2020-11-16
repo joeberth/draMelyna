@@ -17,3 +17,10 @@ export function updateProfileRequest(data) {
       type: '@user/UPDATE_PROFILE_REQUEST',
     };
   }
+
+  export function deletePatient(id) {
+    return {
+      type: '@user/DELETE_PATIENT_REQUEST',
+      payload: { id },
+    };
+  }

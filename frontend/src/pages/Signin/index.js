@@ -32,13 +32,13 @@ export default function Signin() {
   return (
     <Wrapper>
       <Content>
-    <img src={logo} alt="DoctorMe" />
-    <form onSubmit={handleSubmit}>
-      <input name="email" value={email} type="email" placeholder="Seu e-mail" onChange={handleOnEmailChange} />
-      <input name="password" value={password} type="password" placeholder="Sua senha" onChange={handleOnPassChange} />
-      <button type="submit">{ loading ? 'Carregando...' : 'Acessar'}</button>
-      <Link to="/register"> Criar conta gratuita</Link>
-    </form>
+        <img src={logo} alt="DoctorMe" />
+        <form onSubmit={handleSubmit}>
+          <input name="email" value={email} type="email" placeholder="Seu e-mail" onChange={handleOnEmailChange} />
+          <input name="password" value={password} type="password" placeholder="Sua senha" onChange={handleOnPassChange} />
+          <button type="submit">{ loading ? 'Carregando...' : 'Acessar'}</button>
+          <Link to="/register"> Criar conta gratuita</Link>
+       </form>
       </Content>
     </Wrapper>
   );
