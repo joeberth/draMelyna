@@ -1,22 +1,16 @@
 import React, { useState,  useEffect } from 'react';
 import {  useSelector, useDispatch } from 'react-redux';
 import {
-    Primary,
     Secondary,
     FontNumber,
-    TitleFont,
-    Font,
-    Background,
   } from "./style";
 
 import { Button } from 'react-bootstrap'
 import { signUpPatient } from '../../store/modules/auth/actions'
-import { deletePatient } from '../../store/modules/user/actions'
 
 import {
     Modal,
     Select,
-    MenuItem,
     TextField,
     InputLabel,
   } from "@material-ui/core";
@@ -28,8 +22,6 @@ import { Container, FormContent } from './style';
 
 
 export default function Patients() {
-
-
     const dispatch = useDispatch();
     const [patients, setPatients] = useState([])
     const [patient, setPatient] = useState(0)
@@ -45,7 +37,6 @@ export default function Patients() {
     const handleShowDelete = () => setShowDelete(true);
     const handleCloseDelete = () => setShowDelete(false);
 
-    
     async function loadPatients() {
         const resPatients = await api.get(`patients`, {
           headers: { Authorization: `Bearer ${token}`} 
@@ -106,7 +97,7 @@ export default function Patients() {
   return (
     <Container>
         <Table patientsList={patients}></Table>
-            <Button variant="primary" onClick={handleShow}>
+            <Button style={{ backgroundColor: "#28a745"}}  onClick={handleShow}>
                 Adicionar Paciente
             </Button>
             <Button variant="primary" onClick={handleShowDelete}>

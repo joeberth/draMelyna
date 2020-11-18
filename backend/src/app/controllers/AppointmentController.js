@@ -1,5 +1,6 @@
 import { startOfHour, parseISO, isBefore } from 'date-fns';
 import * as Yup from 'yup';
+import { Op } from 'sequelize';
 import Appointment from '../models/Appointment';
 import User from '../models/User';
 
@@ -7,15 +8,15 @@ class AppointmentController {
   async store(req, res) {
     const schema = Yup.object().shape({
       provider_id: Yup.number().required(),
+      user_id: Yup.number().required(),
       date: Yup.date().required(),
     });
 
-    if (!(await schema.isValid(req.body))) {
+    if (!(await schema.isValid(req.body.data))) {
       return res.status(400).json({ error: 'Validation fails' });
     }
 
-    const { provider_id, date, patient_id } = req.body;
-
+    const { provider_id, date, user_id } = req.body.data;
     /**
      * Check if provider_id is a prrovider
      */
@@ -38,6 +39,9 @@ class AppointmentController {
     const checkAvailability = await Appointment.findOne({
       where: {
         provider_id,
+        user_id: {
+          [Op.ne]: null,
+        },
         canceled_at: null,
         date: hourStart,
       },
@@ -50,7 +54,7 @@ class AppointmentController {
     }
 
     const appointment = await Appointment.create({
-      user_id: patient_id,
+      user_id,
       provider_id,
       date: hourStart,
     });
@@ -62,7 +66,7 @@ class AppointmentController {
 
   async index(req, res) {
     const appointments = await Appointment.findAll({
-      where: { user_id: req.userId, canceled_at: null },
+      where: { provider_id: req.userId, canceled_at: null },
       order: ['date'],
     });
 

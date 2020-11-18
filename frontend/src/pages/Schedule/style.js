@@ -33,7 +33,7 @@ export const Container = styled.div`
       margin: 10px 0 20px;
     }
     button {
-      margin: 5px 0 0;
+      margin: 0px 0 0;
       height: 44px;
       background: #3b9eff;
       font-weight: bold;
@@ -49,7 +49,6 @@ export const Container = styled.div`
   }
   > button {
     width: 100%;
-    margin: 10px 0 0;
     height: 44px;
     background: #f64c75;
     font-weight: bold;
@@ -63,3 +62,5 @@ export const Container = styled.div`
     }
   }
 `;
+
+

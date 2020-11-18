@@ -22,6 +22,9 @@ class AvailableController {
       where: {
         provider_id: req.params.providerId,
         canceled_at: null,
+        user_id: {
+          [Op.ne]: null,
+        },
         date: {
           [Op.between]: [startOfDay(searchDate), endOfDay(searchDate)],
         },
@@ -56,21 +59,6 @@ class AvailableController {
       };
     });
     return res.json(available);
-  }
-
-  async delete(req, res) {
-    const appointment = await Appointment.findByPk(req.params.id);
-
-    if (appointment.provider_id !== req.userId) {
-      return res.status(401).json({
-        error: 'You dont have permission to cancel this appointment',
-      });
-    }
-
-    appointment.canceled_at = new Date();
-
-    await appointment.save();
-    return res.json(appointment);
   }
 }
 

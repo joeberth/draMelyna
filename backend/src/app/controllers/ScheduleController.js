@@ -27,19 +27,21 @@ class ScheduleController {
     });
 
     const appointments = [];
-    const promises = appNoPatient.map(async (a) =>
-      appointments.push({
-        past: a.past,
-        id: a.id,
-        date: a.date,
-        canceled_at: a.canceled_at,
-        createdAt: a.createdAt,
-        updatedAt: a.updatedAt,
-        user_id: a.user_id,
-        provider_id: a.provider_id,
-        patient: (await User.findByPk(a.user_id)).name,
-      })
-    );
+    const promises = appNoPatient.map(async (a) => {
+      if (a.user_id) {
+        appointments.push({
+          past: a.past,
+          id: a.id,
+          date: a.date,
+          canceled_at: a.canceled_at,
+          createdAt: a.createdAt,
+          updatedAt: a.updatedAt,
+          user_id: a.user_id,
+          provider_id: a.provider_id,
+          patient: (await User.findByPk(a.user_id)).name,
+        });
+      }
+    });
     await Promise.all(promises);
 
     return res.json(appointments);

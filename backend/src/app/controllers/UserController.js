@@ -90,6 +90,18 @@ class UserController {
     if (!id) {
       return res.status(401).json({ error: 'User not exists' });
     }
+
+    const isProvider = await User.findOne({
+      where: { id, provider: true },
+    });
+    if (isProvider) {
+      return res.status(401).json({ error: ' You Cannot Delete Providers' });
+    }
+
+    if (!id) {
+      return res.status(401).json({ error: 'User not exists' });
+    }
+
     try {
       await User.destroy({ where: { id } });
     } catch (err) {
