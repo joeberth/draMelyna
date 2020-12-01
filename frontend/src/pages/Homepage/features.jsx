@@ -5,22 +5,22 @@ export default function Features() {
     const [features, setFeatures] = useState([{
             "icon": "fa fa-comments-o",
             "title": "Consultas",
-            "text": "Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque natoque etiam."
+            "text": "Realize aqui suas consultas ná área escolhida, a saúde é importante."
         },
         {
             "icon": "fa fa-bullhorn",
             "title": "Exames",
-            "text": "Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque natoque etiam."
+            "text": "Após as consultas, que tal realizar os exames necessários? Nós temos disponíveis diversos tipos de exames!!"
         },
         {
             "icon": "fa fa-group",
             "title": "Procedimentos",
-            "text": "Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque natoque etiam."
+            "text": "Após os exames, realizamos os procedimentos necessários, venha conhecer!"
         },
         {
             "icon": "fa fa-magic",
             "title": "Cirurgias",
-            "text": "Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque natoque etiam."
+            "text": "Temos um departamento cirurgico de qualidade, com o que há de mais moderno no mercado."
         }
     ])
 

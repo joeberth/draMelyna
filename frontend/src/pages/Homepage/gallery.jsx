@@ -8,8 +8,7 @@ export default function Gallery() {
           <div className="section-title">
             <h2>Galeria</h2>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit duis sed
-              dapibus leonec.
+              Conheça nosso espaço físico e como realizamos o nosso trabalho!
             </p>
           </div>
           <div className="row">

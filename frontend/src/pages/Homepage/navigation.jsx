@@ -18,7 +18,7 @@ export default function Navigation() {
               <span className="icon-bar"></span>{" "}
             </button>
             <a className="navbar-brand page-scroll" href="#page-top">
-              Doctor ME, To help You!
+              Doctor ME
             </a>{" "}
           </div>
 

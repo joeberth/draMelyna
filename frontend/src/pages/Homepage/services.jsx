@@ -3,18 +3,18 @@ import React, {useState} from "react";
 export default function Services() {
     const [services, useServices] = useState([{
         "icon": "fa fa-wordpress",
-        "name": "Lorem ipsum dolor",
-        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at."
+        "name": "Marque Pelo Telefone",
+        "text": "Nos ligue, verifique a disponibilidade e marque sua consulta."
     },
     {
         "icon": "fa fa-cart-arrow-down",
-        "name": "Consectetur adipiscing",
-        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at."
+        "name": "Marque sua Consulta Online",
+        "text": "Em breve, também vai ser possível criar sua consulta online."
     },
     {
         "icon": "fa fa-cloud-download",
-        "name": "Lorem ipsum dolor",
-        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at."
+        "name": "Faça o Download dos Resultados",
+        "text": "Nós o avisaremos quando seus resultados estiverem disponíveis, você só precisa aguardar enquanto providenciamos os resultados."
     }
 ])
     return (
@@ -23,8 +23,7 @@ export default function Services() {
           <div className="section-title">
             <h2>Nossos serviços</h2>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit duis sed
-              dapibus leonec.
+              Consultas, exames, procedimentos e cirurgia, tudo que existe de melhor para a sua saúde, em um só lugar!
             </p>
           </div>
           <div className="row">

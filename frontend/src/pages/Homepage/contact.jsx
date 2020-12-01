@@ -2,11 +2,11 @@ import React, { useState} from "react";
 
 export default function Contact(){
     const [contact, setContact] = useState({
-        "address": "4321 California St, San Francisco, CA 12345 ",
-        "phone": "+1 123 456 1234",
-        "email": "info@company.com",
+        "address": "Rua Gaudêncio Yoda Mestre Kame, Nº 00",
+        "phone": "+83 00000000",
+        "email": "joeberth.souza@ccc.ufcg.edu.br",
         "facebook": "fb.com",
-        "twitter": "twitter.com",
+        "twitter": "twitter.com/joeberth",
         "youtube": "youtube.com"
     })
     return (
@@ -18,8 +18,7 @@ export default function Contact(){
                 <div className="section-title">
                   <h2>Fale conosco!</h2>
                   <p>
-                    Please fill out the form below to send us an email and we
-                    will get back to you as soon as possible.
+                    Por Favor, preencha o form abaixo para nos enviar um email. Responderemos o mais rápido possível
                   </p>
                 </div>
                 <form name="sentMessage" id="contactForm" noValidate>
