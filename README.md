@@ -1,5 +1,4 @@
 # doctorMe
-[DevWeb Course](https://github.com/matheusgr/devweb).
 
 DoctorMe is an webApp to help doctors monitor their patients, they can save prescriptions, appointment history and schedule upcoming appointments.
 
@@ -74,4 +73,6 @@ yarn i
 
 
 ### DoctorMe in Action...
+
+![image](https://user-images.githubusercontent.com/33490097/120561653-50748600-c3db-11eb-99bb-47046bb2d519.png)
 
