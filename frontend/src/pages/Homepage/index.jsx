@@ -12,7 +12,7 @@ export default function Homepage(){
     return (
       <div>
         <Navigation />
-        <Header />
+        <Header  />
         <Features />
         <About/>
         <Services/>
