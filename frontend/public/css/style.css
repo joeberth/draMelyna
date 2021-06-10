@@ -237,7 +237,7 @@ header .intro-text {
 }
 /* Features Section */
 #features {
-	padding: 100px 0;
+	/*padding: 100px 0;*/
 	background: #f6f6f6;
 }
 #features i.fa {
@@ -446,8 +446,8 @@ header .intro-text {
 }
 /* Contact Section */
 #contact {
-	padding: 100px 0 60px 0;
-	background: linear-gradient(to right, #6372ff 0%, #AD655B 100%);
+	/*padding: 100px 0 60px 0;*/
+	background: linear-gradient(to right, #D7C7BA 0%, #AD655B 100%);
 	color: rgba(255,255,255,.75);
 }
 #contact .section-title {
