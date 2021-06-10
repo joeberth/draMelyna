@@ -1,21 +1,7 @@
-# doctorMe
+# draMelyna
 
-DoctorMe is an webApp to help doctors monitor their patients, they can save prescriptions, appointment history and schedule upcoming appointments.
+DoctorMe is an webApp to help Dra Melyna Pessoa monitor their patients, they can save prescriptions, appointment history and schedule upcoming appointments.
 
-## First Screen
-
-- Folder and a galery with doctor merchan
-- Check which health plan is accepted by the doctor
-- LogIn in doctor account.
-
-## Second Screen
-
-- Doctor private screen
-- Filter patients
-
-## Third Screen
-
-- Form to Schedule appointments with available times.
 
 ### How to install
 
@@ -23,7 +9,7 @@ DoctorMe is an webApp to help doctors monitor their patients, they can save pres
 
 1- Clone repo
 ```
-git clone https://github.com/joeberth/doctorMe.git
+git clone https://github.com/joeberth/draMelyna.git
 ```
 
 2- change to backend folder (make sure you have psql installed)
@@ -72,7 +58,7 @@ yarn i
 ```
 
 
-### DoctorMe in Action...
+### draMelyna in Action...
 
 ![image](https://user-images.githubusercontent.com/33490097/120561653-50748600-c3db-11eb-99bb-47046bb2d519.png)
 

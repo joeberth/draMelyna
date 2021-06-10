@@ -27,7 +27,7 @@ const Navbar = () => {
                         <span className="icon-bar"></span>{" "}
                         </button>
                         <a className="navbar-brand page-scroll" href="#page-top">
-                        Doctor ME, To help You!
+                        Dra Melyna Pessoa, Endocrinologia perto de você
                         </a>{" "}
                     </div>
 

@@ -1,44 +1,19 @@
 import React, { useState } from 'react'
 
 export default function About() {
-  const [about, setAbout ] = useState({
-    "paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    "Why": [
-        "Equipe qualificada",
-        "Horários marcados",
-        "Atendimento Humanizado",
-        "Cirurgias"
-    ],
-    "Why2": [
-        "Procedimentos",
-        "Espaço Kids",
-        "Pós-Consulta",
-        "All in one"
-    ]
-})
+ 
     return (
         <div id="about">
         <div className="container">
           <div className="row">
-            <div className="col-xs-12 col-md-6"> <img src="img/groupDoctor.jpg" className="img-responsive" alt=""/> </div>
+            <div className="col-xs-12 col-md-6"> <img src="img/melynaperfil.jpg" className="img-responsive" alt=""/> </div>
             <div className="col-xs-12 col-md-6">
               <div className="about-text">
-                <h2>Sobre nós</h2>
-                <p>Temos uma vasta experiência no ramo da medicina, com 15 anos no mercado e muito a lhe oferecer.</p>
-                <h3>Porque nos escolher?</h3>
-                <div className="list-style">
-                  <div className="col-lg-6 col-sm-6 col-xs-12">
-                    <ul>
-                      {about ? about.Why.map((d, i) => <li  key={`${d}-${i}`}>{d}</li>) : 'loading'}
-                    </ul>
-                  </div>
-                  <div className="col-lg-6 col-sm-6 col-xs-12">
-                    <ul>
-                    {about ? about.Why2.map((d, i) => <li  key={`${d}-${i}`}> {d}</li>) : 'loading'}
-
-                    </ul>
-                  </div>
-                </div>
+                <h2>Dra. Melyna Pessoa</h2>
+                <p>Conquistei o meu tão sonhado título de Médica (2010-2015) na Faculdade de Ciências Médicas de Campina Grande, instituição e cidade por quais sou apaixonada e grata.<br></br>
+Meu próximo passo e com certeza um dos mais desafiadores foi a minha primeira residência em Clínica Médica no HUPAA-Universidade Federal de Alagoas (2016-2018), em que eu pude ver e sentir o quanto a vida é fugaz e o quanto deve ser valorizada.<br></br>
+Nesses últimos dois anos, Deus me levou um pouquinho para mais longe, fui parar em terras mineiras (Uberaba) para realizar a minha segunda residência médica em Endocrinologia e Metabologia no Hospital de Clínicas da Universidade Federal do Triângulo Mineiro (2019-2021), especialidade pela qual sou tão apaixonada e realizada.<br></br>
+Sigo sempre no propósito de evoluir, de trazer todo o meu conhecimento para vocês e de ajudar todos aqueles que a mim confiarem sua saúde. Que aqui seja um espaço de troca contínua, de aprendizado, de apresentar um pouco mais do universo fascinante da Endocrinologia e Metabologia, além de ser um local de compartilhar um pouquinho do meu mundo, da forma mais leve e natural possível.</p>
               </div>
             </div>
           </div>

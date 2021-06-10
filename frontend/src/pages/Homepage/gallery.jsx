@@ -3,6 +3,7 @@ import React, { useState } from "react";
 export default function Gallery() {
 
     return (
+     
       <div id="portfolio" className="text-center">
         <div className="container">
           <div className="section-title">

@@ -1,4 +1,5 @@
 import React from "react";
+import { NavHeader } from './style';
 
 export default function Navigation() {
     return (
@@ -17,9 +18,11 @@ export default function Navigation() {
               <span className="icon-bar"></span>{" "}
               <span className="icon-bar"></span>{" "}
             </button>
-            <a className="navbar-brand page-scroll" href="#page-top">
-              Doctor ME
-            </a>{" "}
+                <a style={{
+                marginTop: 0,
+              }} className="navbar-brand page-scroll" href="#page-top">
+                  Dra. Melyna Pessoa
+                </a>{" "}
           </div>
 
           <div
@@ -29,7 +32,7 @@ export default function Navigation() {
             <ul className="nav navbar-nav navbar-right">
               <li>
                 <a href="#features" className="page-scroll">
-                  Funcionalidades
+                  Marque sua consulta
                 </a>
               </li>
               <li>
@@ -39,7 +42,7 @@ export default function Navigation() {
               </li>
               <li>
                 <a href="#services" className="page-scroll">
-                  Serviços
+                  Endocrinologia
                 </a>
               </li>
               <li>
@@ -49,14 +52,17 @@ export default function Navigation() {
               </li>
               <li>
                 <a href="#contact" className="page-scroll">
-                  Contato
+                  Onde estamos?
                 </a>
               </li>
+              {/*
               <li>
                 <a href="signin">
                   Login
                 </a>
               </li>
+              
+              */}
             </ul>
           </div>
         </div>

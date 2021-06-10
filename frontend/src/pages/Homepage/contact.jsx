@@ -2,11 +2,11 @@ import React, { useState} from "react";
 
 export default function Contact(){
     const [contact, setContact] = useState({
-        "address": "Rua Gaudêncio Yoda Mestre Kame, Nº 00",
-        "phone": "+83 00000000",
-        "email": "joeberth.souza@ccc.ufcg.edu.br",
+        "address": "Av. Deputada Ceci Cunha, 1179, Sala 102 (1º Andar) - Novo Horizonte, Arapiraca - AL, 57312-675",
+        "phone": "+82 988888888",
+        "email": "dramelynapessoa@gmail.com",
         "facebook": "fb.com",
-        "twitter": "twitter.com/joeberth",
+        "instagram": "https://www.instagram.com/dramelynapessoa/",
         "youtube": "youtube.com"
     })
     return (
@@ -16,55 +16,19 @@ export default function Contact(){
             <div className="col-md-8">
               <div className="row">
                 <div className="section-title">
-                  <h2>Fale conosco!</h2>
-                  <p>
-                    Por Favor, preencha o form abaixo para nos enviar um email. Responderemos o mais rápido possível
-                  </p>
+                  <h2>Onde estamos?</h2>
+               
                 </div>
-                <form name="sentMessage" id="contactForm" noValidate>
-                  <div className="row">
-                    <div className="col-md-6">
-                      <div className="form-group">
-                        <input
-                          type="text"
-                          id="name"
-                          className="form-control"
-                          placeholder="Name"
-                          required="required"
-                        />
-                        <p className="help-block text-danger"></p>
-                      </div>
-                    </div>
-                    <div className="col-md-6">
-                      <div className="form-group">
-                        <input
-                          type="email"
-                          id="email"
-                          className="form-control"
-                          placeholder="Email"
-                          required="required"
-                        />
-                        <p className="help-block text-danger"></p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="form-group">
-                    <textarea
-                      name="message"
-                      id="message"
-                      className="form-control"
-                      rows="4"
-                      placeholder="Message"
-                      required
-                    ></textarea>
-                    <p className="help-block text-danger"></p>
-                  </div>
-                  <div id="success"></div>
-                  <button type="submit" className="btn btn-custom btn-lg">
-                    Envie uma mensagem!
-                  </button>
-                </form>
               </div>
+              <div className="row">
+                <div className="col-md-6">
+                  <img width="100%" height="50%" src="img/metropolitan.png"  /> 
+                </div>
+                <div className="col-md-6">
+                  <iframe width="100%" height="50%"  scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=Av.%20Deputada%20Ceci%20Cunha,%201179%20-%20Novo%20Horizonte,%20Arapiraca%20-%20AL,%2057312-675+(My%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe><a href="https://www.maps.ie/draw-radius-circle-map/"></a>
+                </div>
+              </div>
+                                
             </div>
             <div className="col-md-3 col-md-offset-1 contact-info">
               <div className="contact-item">
@@ -105,8 +69,8 @@ export default function Contact(){
                       </a>
                     </li>
                     <li>
-                      <a href={contact ? contact.twitter : "/"}>
-                        <i className="fa fa-twitter"></i>
+                      <a href={contact ? contact.instagram : "/"}>
+                        <i className="fa fa-instagram"></i>
                       </a>
                     </li>
                     <li>
