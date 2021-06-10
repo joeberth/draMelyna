@@ -2,11 +2,11 @@ import React, { useState} from "react";
 
 export default function Contact(){
     const [contact, setContact] = useState({
-        "address": "Rua Gaudêncio Yoda Mestre Kame, Nº 00",
-        "phone": "+83 00000000",
-        "email": "joeberth.souza@ccc.ufcg.edu.br",
+        "address": "Av. Deputada Ceci Cunha, 1179, Sala 102 (1º Andar) - Novo Horizonte, Arapiraca - AL, 57312-675",
+        "phone": "+82 988888888",
+        "email": "dramelynapessoa@gmail.com",
         "facebook": "fb.com",
-        "twitter": "twitter.com/joeberth",
+        "instagram": "https://www.instagram.com/dramelynapessoa/",
         "youtube": "youtube.com"
     })
     return (
@@ -69,8 +69,8 @@ export default function Contact(){
                       </a>
                     </li>
                     <li>
-                      <a href={contact ? contact.twitter : "/"}>
-                        <i className="fa fa-twitter"></i>
+                      <a href={contact ? contact.instagram : "/"}>
+                        <i className="fa fa-instagram"></i>
                       </a>
                     </li>
                     <li>
